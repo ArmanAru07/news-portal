@@ -12,7 +12,7 @@ const displayCategorys = categorys =>{
         categoryButton.classList.add('category');
         // console.log(category);
         categoryButton.innerHTML =`
-        <a onclick="loadNews('${category.category_id}')" class="nav-link active " aria-current="page" href="#"  style="text-decoration: none;">${category.category_name}</a>
+        <a onclick="loadNews('${category.category_id}')" class="nav-link p-2 fw-bold btn btn-outline-success" type="button" aria-current="page" href="#"  style="text-decoration: none;">${category.category_name}</a>
         `;
         categorysItem.appendChild(categoryButton);
     })
@@ -42,7 +42,7 @@ const displayNews = category =>{
     <div class="card mb-3">
     <div class="row g-0">
     <div class="col-md-4">
-      <img src="${element.image_url}" class="img-fluid rounded-start" alt="...">
+      <img src="${element.image_url}" class="img-fluid rounded-start h-100" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -54,11 +54,11 @@ const displayNews = category =>{
                   <img class="img-fluid rounded-circle" height="100" width="100" src="${element.author.img}" alt="">
               </div>
               <div class="p-3 ">
-                  <h6>${element.author.name}</h6>
+                  <h6>${element.author.name ? element.author.name : "No Data Found!"}</h6>
                   <p><small>${element.author.published_date}</small></p>
               </div>
           </div>
-          <div class="p-3 "><i class="fa-regular fa-eye"></i><span>${element.total_view}</span></div>
+          <div class="p-3 "><i class="fa-regular fa-eye"></i><span>${element.total_view ? element.total_view : "Do not seen by someone!"}</span></div>
           <div class="p-3 ">
               <span>${element.rating.number}</span>
               <i class="fa-solid fa-star"></i>

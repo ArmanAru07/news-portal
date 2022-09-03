@@ -18,7 +18,7 @@
         <!-- Navbar -->
         <nav class="navbar bg-light">
             <div class="container">
-              <a class="navbar-brand">Trusty Blog Network</a>
+              <a class="navbar-brand text-success fw-bold">Trusty Blog Network</a>
               <p>
                 <a class="btn btn-outline-success" type="button" href="index.html">News</a>
                 <a class="btn btn-outline-success bg-success text-white" href="blog.html" type="button" > Blog</a>
@@ -36,48 +36,54 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                            What is Bootstrap vs CSS?
+                            what is the difference between var let and const..?
                         </button>
                       </h2>
                       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                         <div class="accordion-body">
-                          <strong>Bootstrap vs CSS:</strong> CSS represent the style and the appearance of content like font, color, margin, padding, etc. Bootstrap is a free and open-source CSS Framework that is used for developing responsive website. CSS does not have a grid system. Bootstrap is based on-grid system.
+                          <strong>Var: </strong>
+                          Before the advent of ES6, var declarations ruled. There are issues associated with variables declared with var, though. That is why it was necessary for new ways to declare variables to emerge. First, let's get to understand var more before we discuss those issues.
+                          <strong>Let: </strong>
+                          let is now preferred for variable declaration. It's no surprise as it comes as an improvement to var declarations. It also solves the problem with var that we just covered. Let's consider why this is so.
+                          <strong>Const: </strong>
+                          Variables declared with the const maintain constant values. const declarations share some similarities with let declarations.
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                          Is Bootstrap CSS or HTML?
+                            what is the difference between arrow function and normal function..?
                         </button>
                       </h2>
                       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
-                          <strong>Bootstrap uses HTML elements and CSS properties</strong> that require the HTML5 doctype. Bootstrap 3 is designed to be responsive to mobile devices. Mobile-first styles are part of the core framework.
+                          <strong>Difference between arrow function and normal function</strong> Unlike regular functions, arrow functions do not have their own this . The value of this inside an arrow function remains the same throughout the lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function.
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                            Is Bootstrap like WordPress?
+                            Why do we use template string in JavaScript..?
                         </button>
                       </h2>
                       <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
-                          <strong>Bootstrap is front-end framework which is used for designing and user interface of Static website. WordPress used both front-end and back-end for creating Dynamic websites.</strong> In Bootstrap there is no features of pre-existing theme. In WordPress you have lots of pre-existing themes which is used to create dynamic website
+                          <strong>Template string: </strong>Template strings are a powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate variables and expressions into strings without needing to concatenate like in older versions of JavaScript. It allows us to create strings that are complex and contain dynamic elements.
                         </div>
                       </div>
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                            Is Bootstrap easier than Tailwind?
+                            what is the difference between map, foreach, filter and find..?
                         </button>
                       </h2>
                       <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body">
-                          <strong>Another key advantage of using Tailwind CSS over Bootstrap is that, since apps and sites are composed of predesigned widgets, <strong>Tailwind CSS doesn't impose difficult-to-reverse design decisions.</strong>  Working with Tailwind CSS means using a set of utility classes that lets you work with exactly what you need.
+                            The main difference between map and forEach is that the map method returns a new array by applying the callback function on each element of an array, while the forEach method doesn't return anything. You can use the forEach method to mutate the source array, but this isn't really the way it's meant to be used. <br>
+                            The main difference between forEach and filter is that forEach just loop over the array and executes the callback but filter executes the callback and check its return value.
                         </div>
                       </div>
                     </div>
@@ -85,5 +91,20 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="bg-dark text-center text-white p-5">
+            <h2>Trusty Network</h2>
+            <p><small>Office 41, Zawaya Buildin, Ghala Muscat,</small></p>
+            <p><small>Sultanate of Oman</small></p>
+            <p><small>Privacy Ploicy  |   Terms of use</small></p>
+            <p class="m-4">
+                <a href="www.facebook.com" class="p-4"><i class="fa-brands fa-facebook-square"></i></a>
+                <a href="www.instagram.com" class="p-4"><i class="fa-brands fa-instagram-square"></i></a>
+                <a href="www.twitter.com" class="p-4"><i class="fa-brands fa-twitter"></i></a>
+                <a href="www.tiktok.com" class="p-4"><i class="fa-brands fa-tiktok"></i></a>
+            </p>
+        </div>
+    </footer>
+    <script src="js/Category.js"></script>
 </body>
 </html>
