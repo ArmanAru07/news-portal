@@ -28,13 +28,26 @@ const loadNews = (category_id) => {
 }
 
 const displayNews = category =>{
+
+   const lengthField= document.getElementById('handelID');
+   lengthField.innerText=`${category.length}`
+
+
+    console.log(category.length)
     const Maindiv = document.getElementById('Main-div');
     Maindiv.innerHTML = '';
+
+    // display no news 
+    const noNewsFound = document.getElementById('no-news-found');
+    if(category.length === 0){
+        noNewsFound.classList.remove('d-none')
+        toggleSpinner(false);
+    }
+    
 
     category.forEach(element => {
         console.log(element)
         
-    
     // const news = document.getElementById('newses');
     const newses = document.createElement('div')
     newses.innerHTML = `
@@ -47,7 +60,7 @@ const displayNews = category =>{
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">${element.title}</h5>
-        <p class="card-text">${element.details}</p>
+        <p class="card-text">${element.details.slice(0,250).concat('...')}</p>
         <div class="d-flex justify-content-between">
           <div class="d-flex">
               <div>
@@ -93,5 +106,9 @@ const toggleSpinner = isLoading => {
     }
 }
 
-
 loadCategorys();
+
+
+// const newsNumber = [];
+// const length = newsNumber.length;
+// document.getElementById("news-number").innerHTML = length;
