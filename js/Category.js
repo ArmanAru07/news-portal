@@ -1,7 +1,13 @@
 const loadCategorys = () =>{
-    fetch('https://openapi.programming-hero.com/api/news/categories')
+    const url = 'https://openapi.programming-hero.com/api/news/categories';
+    try{
+        fetch(url)
     .then((res)=>res.json())
     .then((data)=> displayCategorys(data.data.news_category))
+    }
+    catch(error){
+        console.log(error)
+    }
 }
 
 const displayCategorys = categorys =>{
@@ -22,9 +28,15 @@ const loadNews = (category_id) => {
     // loading start 
     toggleSpinner(true);
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`
-    fetch(url)
+    try{
+        fetch(url)
     .then(res => res.json())
     .then(data => displayNews(data.data))
+    }
+    catch(error){
+        console.log(error)
+    }
+    
 }
 
 const displayNews = category =>{
@@ -45,7 +57,16 @@ const displayNews = category =>{
     }
     
 
-    category.forEach(element => {
+    let array = []
+    category.forEach(elements =>{
+        array.push(elements)
+    });
+
+    array.sort((a,b) =>{
+        return b.total_view - a.total_view;
+    });
+
+    array.forEach(element => {
         console.log(element)
         
     // const news = document.getElementById('newses');
@@ -81,7 +102,7 @@ const displayNews = category =>{
               <i class="fa-solid fa-star-half-stroke"></i>
           </div>
           <div class="p-3 ">
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Read More...</button>
+          <button onclick="readMore('${element._id}')" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Read More...</button>
           </div>
         </div>
       </div>
@@ -108,7 +129,22 @@ const toggleSpinner = isLoading => {
 
 loadCategorys();
 
+const readMore = (arman) =>{
+    
+    const url =`https://openapi.programming-hero.com/api/news/${arman}`;
+    try{
+        fetch(url)
+    .then((res)=>res.json())
+    .then((data)=> displayReadMore(data))
+    }
+    catch(error){
+        console.log(error)
+    }
+}
 
-// const newsNumber = [];
-// const length = newsNumber.length;
-// document.getElementById("news-number").innerHTML = length;
+const displayReadMore = (data) => {
+    console.log(data)
+    const modalDiv = document.getElementById('read-details')
+    modalDiv.innerText = ` ${data.data[0].details ? data.data[0].details : "Not found...!"};
+`
+}
