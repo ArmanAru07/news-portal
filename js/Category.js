@@ -15,11 +15,12 @@ const displayCategorys = categorys =>{
         <a onclick="loadNews('${category.category_id}')" class="nav-link active " aria-current="page" href="#"  style="text-decoration: none;">${category.category_name}</a>
         `;
         categorysItem.appendChild(categoryButton);
-        
     })
+    
 }
 const loadNews = (category_id) => {
-    
+    // loading start 
+    toggleSpinner(true);
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`
     fetch(url)
     .then(res => res.json())
@@ -29,13 +30,13 @@ const loadNews = (category_id) => {
 const displayNews = category =>{
     const Maindiv = document.getElementById('Main-div');
     Maindiv.innerHTML = '';
+
     category.forEach(element => {
         console.log(element)
         
     
     // const news = document.getElementById('newses');
     const newses = document.createElement('div')
-    
     newses.innerHTML = `
 
     <div class="card mb-3">
@@ -67,7 +68,7 @@ const displayNews = category =>{
               <i class="fa-solid fa-star-half-stroke"></i>
           </div>
           <div class="p-3 ">
-          </i><button class="btn btn-outline-success href="#" " type="submit">Read More..</button>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Read More...</button>
           </div>
         </div>
       </div>
@@ -77,10 +78,19 @@ const displayNews = category =>{
     
     `
     Maindiv.appendChild(newses);
+    toggleSpinner(false);
     });
     
-    
-     
+}
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if(isLoading){
+        loaderSection.classList.remove('d-none')
+    }
+    else{
+        loaderSection.classList.add('d-none');
+    }
 }
 
 
